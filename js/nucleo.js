@@ -57,7 +57,7 @@
   ['touchend', 'click'].forEach(function (ev) { document.addEventListener(ev, desbloquear, true); });
 
   /* ---------- Voz: mp3 pregrabado; la síntesis del navegador solo como respaldo ---------- */
-  const VERSION_AUDIO = 3; // súbela si se regeneran las voces y algún navegador guardó las viejas
+  const VERSION_AUDIO = 4; // súbela si se regeneran las voces y algún navegador guardó las viejas
   // Se guarda el mp3 comprimido (pocos KB) y se decodifica al sonar: decodificado ocuparía
   // cientos de KB por frase, demasiado para tablets de 1 GB.
   const mp3 = {};

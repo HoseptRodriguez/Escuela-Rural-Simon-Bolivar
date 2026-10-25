@@ -28,7 +28,7 @@ tools/generar-audio.ps1   Genera los mp3 que falten desde los JSON
    El formato de cada tipo está explicado al inicio de su archivo en `js/tipos/`.
 2. Sube las imágenes a `img/` (SVG, o WebP/PNG de máximo 100 KB).
 3. Audio: graba los mp3 con el nombre indicado en `audio`, o genéralos con voces neuronales
-   (Salomé, de Colombia, en español y Ana en inglés):
+   (Emma, una voz multilingüe que habla español e inglés):
    `powershell -ExecutionPolicy Bypass -File tools\generar-audio.ps1`
    Requiere internet, `pip install --user edge-tts` y ffmpeg (`winget install Gyan.FFmpeg`).
    Sin internet: añade `-Motor sapi` (voces de Windows, más robóticas). No sobrescribe grabaciones existentes.

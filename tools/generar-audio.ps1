@@ -5,7 +5,7 @@
 #
 # Uso:  powershell -ExecutionPolicy Bypass -File tools\generar-audio.ps1 [-Forzar] [-Motor edge|sapi]
 # Motor "edge" (por defecto): voces neuronales con edge-tts (pip install --user edge-tts), necesita internet.
-#   Español: es-CO-SalomeNeural (Colombia) con tono +25Hz, más alegre. Inglés: en-US-AnaNeural (voz infantil).
+#   Voz elegida: en-US-EmmaMultilingualNeural para español e inglés (la mascota tiene una sola voz).
 #   Velocidad normal: bajarla hace que las voces neuronales suenen arrastradas.
 # Motor "sapi": voces de Windows sin internet (Sabina es-MX, Zira en-US), más robóticas.
 # Requiere ffmpeg (winget install Gyan.FFmpeg).
@@ -18,8 +18,8 @@ if ($Motor -eq 'sapi') {
   $voz = New-Object System.Speech.Synthesis.SpeechSynthesizer
   $voces = @{ es = 'Microsoft Sabina Desktop'; en = 'Microsoft Zira Desktop' }
 } else {
-  $voces = @{ es = 'es-CO-SalomeNeural'; en = 'en-US-AnaNeural' }
-  $tonos = @{ es = '+25Hz'; en = '+0Hz' }
+  $voces = @{ es = 'en-US-EmmaMultilingualNeural'; en = 'en-US-EmmaMultilingualNeural' }
+  $tonos = @{ es = '+0Hz'; en = '+0Hz' }
 }
 
 $ffmpeg = (Get-Command ffmpeg -ErrorAction SilentlyContinue).Source
@@ -64,7 +64,12 @@ foreach ($ruta in $pendientes.Keys) {
     [IO.File]::WriteAllText($txt, $e.texto, (New-Object Text.UTF8Encoding $false))
     # En PowerShell 5.1 cualquier salida de error de un programa externo detiene el script con 'Stop'
     $ErrorActionPreference = 'Continue'
-    & python -m edge_tts --voice $voces[$e.idioma] --pitch=$($tonos[$e.idioma]) --file $txt --write-media $tmp 2>$null
+    # El servicio a veces falla una petición suelta: se reintenta hasta 3 veces
+    foreach ($intento in 1..3) {
+      & python -m edge_tts --voice $voces[$e.idioma] --pitch=$($tonos[$e.idioma]) --file $txt --write-media $tmp 2>$null
+      if ($LASTEXITCODE -eq 0 -and (Get-Item $tmp).Length -gt 1000) { break }
+      Start-Sleep -Seconds 3
+    }
     $ErrorActionPreference = 'Stop'
     if ($LASTEXITCODE -ne 0) { throw "edge-tts falló con: $($e.texto)" }
   }
