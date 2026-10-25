@@ -1,0 +1,32 @@
+{
+  "curso": "segundo",
+  "materia": "sociales",
+  "actividades": [
+    {
+      "id": "s-soc-01",
+      "titulo": "El campo y la ciudad",
+      "tipo": "arrastrar",
+      "imagen": "img/obj/tractor.svg",
+      "dba": "DBA 1",
+      "dba_texto": "Comprende que el paisaje que vemos es resultado de las acciones humanas que se realizan en un espacio geográfico.",
+      "dba_verificado": false,
+      "instruccion": "¿Dónde lo vemos más? Lleva cada dibujo al campo o a la ciudad.",
+      "audio": "audio/segundo/sociales/s-soc-01.mp3",
+      "rondas": [
+        {
+          "cajas": [
+            { "id": "campo", "img": "img/obj/casa.svg", "texto": "Campo" },
+            { "id": "ciudad", "img": "img/obj/edificio.svg", "texto": "Ciudad" }
+          ],
+          "items": [
+            { "id": "vaca", "img": "img/obj/vaca.svg", "caja": "campo", "voz": "Vaca", "audio": "audio/segundo/sociales/vaca.mp3" },
+            { "id": "tractor", "img": "img/obj/tractor.svg", "caja": "campo", "voz": "Tractor", "audio": "audio/segundo/sociales/tractor.mp3" },
+            { "id": "gallina", "img": "img/obj/gallina.svg", "caja": "campo", "voz": "Gallina", "audio": "audio/segundo/sociales/gallina.mp3" },
+            { "id": "carro", "img": "img/obj/carro.svg", "caja": "ciudad", "voz": "Carro", "audio": "audio/segundo/sociales/carro.mp3" },
+            { "id": "semaforo", "img": "img/obj/semaforo.svg", "caja": "ciudad", "voz": "Semáforo", "audio": "audio/segundo/sociales/semaforo.mp3" }
+          ]
+        }
+      ]
+    }
+  ]
+}

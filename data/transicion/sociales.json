@@ -1,0 +1,27 @@
+{
+  "curso": "transicion",
+  "materia": "sociales",
+  "actividades": [
+    {
+      "id": "t-soc-01",
+      "titulo": "Mi familia",
+      "tipo": "memoria",
+      "imagen": "img/obj/mama.svg",
+      "dba": "DBA 1",
+      "dba_texto": "Reconoce su identidad y la de los miembros de su familia.",
+      "dba_verificado": false,
+      "instruccion": "Busca las parejas de la familia.",
+      "audio": "audio/transicion/sociales/t-soc-01.mp3",
+      "rondas": [
+        {
+          "pares": [
+            { "id": "mama", "a": { "img": "img/obj/mama.svg", "voz": "Mamá", "audio": "audio/transicion/sociales/mama.mp3" } },
+            { "id": "papa", "a": { "img": "img/obj/papa.svg", "voz": "Papá", "audio": "audio/transicion/sociales/papa.mp3" } },
+            { "id": "abuelo", "a": { "img": "img/obj/abuelo.svg", "voz": "Abuelo", "audio": "audio/transicion/sociales/abuelo.mp3" } },
+            { "id": "bebe", "a": { "img": "img/obj/bebe.svg", "voz": "Bebé", "audio": "audio/transicion/sociales/bebe.mp3" } }
+          ]
+        }
+      ]
+    }
+  ]
+}

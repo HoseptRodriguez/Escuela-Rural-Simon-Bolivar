@@ -1,0 +1,43 @@
+{
+  "curso": "primero",
+  "materia": "sociales",
+  "actividades": [
+    {
+      "id": "p-soc-01",
+      "titulo": "¿Quién nos ayuda?",
+      "tipo": "opcion",
+      "imagen": "img/obj/campesino.svg",
+      "dba": "DBA 5",
+      "dba_texto": "Reconoce las personas que conforman su comunidad y el trabajo que realizan.",
+      "dba_verificado": false,
+      "instruccion": "Escucha la pregunta y toca a la persona.",
+      "audio": "audio/primero/sociales/p-soc-01.mp3",
+      "rondas": [
+        { "instruccion": "¿Quién cultiva los alimentos?", "audio": "audio/primero/sociales/p-soc-01-cultiva.mp3", "correcta": "campesino",
+          "opciones": [
+            { "id": "campesino", "img": "img/obj/campesino.svg", "texto": "Campesino", "audio": "audio/primero/sociales/campesino.mp3" },
+            { "id": "bombero", "img": "img/obj/bombero.svg", "texto": "Bombero", "audio": "audio/primero/sociales/bombero.mp3" },
+            { "id": "medico", "img": "img/obj/medico.svg", "texto": "Médico", "audio": "audio/primero/sociales/medico.mp3" }
+          ] },
+        { "instruccion": "¿Quién apaga el fuego?", "audio": "audio/primero/sociales/p-soc-01-fuego.mp3", "correcta": "bombero",
+          "opciones": [
+            { "id": "maestra", "img": "img/obj/maestra.svg", "texto": "Maestra", "audio": "audio/primero/sociales/maestra.mp3" },
+            { "id": "bombero", "img": "img/obj/bombero.svg", "texto": "Bombero", "audio": "audio/primero/sociales/bombero.mp3" },
+            { "id": "campesino", "img": "img/obj/campesino.svg", "texto": "Campesino", "audio": "audio/primero/sociales/campesino.mp3" }
+          ] },
+        { "instruccion": "¿Quién nos enseña en la escuela?", "audio": "audio/primero/sociales/p-soc-01-ensena.mp3", "correcta": "maestra",
+          "opciones": [
+            { "id": "medico", "img": "img/obj/medico.svg", "texto": "Médico", "audio": "audio/primero/sociales/medico.mp3" },
+            { "id": "campesino", "img": "img/obj/campesino.svg", "texto": "Campesino", "audio": "audio/primero/sociales/campesino.mp3" },
+            { "id": "maestra", "img": "img/obj/maestra.svg", "texto": "Maestra", "audio": "audio/primero/sociales/maestra.mp3" }
+          ] },
+        { "instruccion": "¿Quién nos cura cuando estamos enfermos?", "audio": "audio/primero/sociales/p-soc-01-cura.mp3", "correcta": "medico",
+          "opciones": [
+            { "id": "bombero", "img": "img/obj/bombero.svg", "texto": "Bombero", "audio": "audio/primero/sociales/bombero.mp3" },
+            { "id": "medico", "img": "img/obj/medico.svg", "texto": "Médico", "audio": "audio/primero/sociales/medico.mp3" },
+            { "id": "maestra", "img": "img/obj/maestra.svg", "texto": "Maestra", "audio": "audio/primero/sociales/maestra.mp3" }
+          ] }
+      ]
+    }
+  ]
+}
