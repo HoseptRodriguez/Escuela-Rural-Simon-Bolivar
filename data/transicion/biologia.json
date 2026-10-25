@@ -1,0 +1,49 @@
+{
+  "curso": "transicion",
+  "materia": "biologia",
+  "actividades": [
+    {
+      "id": "t-bio-01",
+      "titulo": "Mi cuerpo",
+      "tipo": "opcion",
+      "imagen": "img/obj/ojos.svg",
+      "dba": "DBA 4",
+      "dba_texto": "Reconoce su cuerpo y lo que puede hacer con él (por verificar el número).",
+      "dba_verificado": false,
+      "instruccion": "Escucha y toca la parte del cuerpo.",
+      "audio": "audio/transicion/biologia/t-bio-01.mp3",
+      "rondas": [
+        { "instruccion": "Toca los ojos.", "audio": "audio/transicion/biologia/t-bio-01-ojos.mp3", "correcta": "ojos",
+          "opciones": [
+            { "id": "ojos", "img": "img/obj/ojos.svg", "voz": "Ojos", "audio": "audio/transicion/biologia/ojos.mp3" },
+            { "id": "nariz", "img": "img/obj/nariz.svg", "voz": "Nariz", "audio": "audio/transicion/biologia/nariz.mp3" },
+            { "id": "boca", "img": "img/obj/boca.svg", "voz": "Boca", "audio": "audio/transicion/biologia/boca.mp3" }
+          ] },
+        { "instruccion": "Toca la nariz.", "audio": "audio/transicion/biologia/t-bio-01-nariz.mp3", "correcta": "nariz",
+          "opciones": [
+            { "id": "ojos", "img": "img/obj/ojos.svg", "voz": "Ojos", "audio": "audio/transicion/biologia/ojos.mp3" },
+            { "id": "nariz", "img": "img/obj/nariz.svg", "voz": "Nariz", "audio": "audio/transicion/biologia/nariz.mp3" },
+            { "id": "mano", "img": "img/obj/mano.svg", "voz": "Mano", "audio": "audio/transicion/biologia/mano.mp3" }
+          ] },
+        { "instruccion": "Toca la boca.", "audio": "audio/transicion/biologia/t-bio-01-boca.mp3", "correcta": "boca",
+          "opciones": [
+            { "id": "oreja", "img": "img/obj/oreja.svg", "voz": "Oreja", "audio": "audio/transicion/biologia/oreja.mp3" },
+            { "id": "boca", "img": "img/obj/boca.svg", "voz": "Boca", "audio": "audio/transicion/biologia/boca.mp3" },
+            { "id": "nariz", "img": "img/obj/nariz.svg", "voz": "Nariz", "audio": "audio/transicion/biologia/nariz.mp3" }
+          ] },
+        { "instruccion": "Toca la oreja.", "audio": "audio/transicion/biologia/t-bio-01-oreja.mp3", "correcta": "oreja",
+          "opciones": [
+            { "id": "mano", "img": "img/obj/mano.svg", "voz": "Mano", "audio": "audio/transicion/biologia/mano.mp3" },
+            { "id": "ojos", "img": "img/obj/ojos.svg", "voz": "Ojos", "audio": "audio/transicion/biologia/ojos.mp3" },
+            { "id": "oreja", "img": "img/obj/oreja.svg", "voz": "Oreja", "audio": "audio/transicion/biologia/oreja.mp3" }
+          ] },
+        { "instruccion": "Toca la mano.", "audio": "audio/transicion/biologia/t-bio-01-mano.mp3", "correcta": "mano",
+          "opciones": [
+            { "id": "boca", "img": "img/obj/boca.svg", "voz": "Boca", "audio": "audio/transicion/biologia/boca.mp3" },
+            { "id": "mano", "img": "img/obj/mano.svg", "voz": "Mano", "audio": "audio/transicion/biologia/mano.mp3" },
+            { "id": "oreja", "img": "img/obj/oreja.svg", "voz": "Oreja", "audio": "audio/transicion/biologia/oreja.mp3" }
+          ] }
+      ]
+    }
+  ]
+}

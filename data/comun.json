@@ -1,0 +1,24 @@
+{
+  "frases": {
+    "saludo": { "texto": "¡Hola! Toca tu curso.", "audio": "audio/comun/saludo.mp3" },
+    "perfil": { "texto": "Toca tu nombre.", "audio": "audio/comun/perfil.mp3" },
+    "materia": { "texto": "Elige una materia.", "audio": "audio/comun/materia.mp3" },
+    "actividad": { "texto": "Elige un juego.", "audio": "audio/comun/actividad.mp3" },
+    "bien": { "texto": "¡Muy bien!", "audio": "audio/comun/bien.mp3" },
+    "intenta": { "texto": "Intenta otra vez.", "audio": "audio/comun/intenta.mp3" },
+    "cuantos": { "texto": "¿Cuántos hay?", "audio": "audio/comun/cuantos.mp3" },
+    "fin": { "texto": "¡Lo lograste!", "audio": "audio/comun/fin.mp3" }
+  },
+  "numeros": [
+    { "texto": "uno", "audio": "audio/comun/num-1.mp3" },
+    { "texto": "dos", "audio": "audio/comun/num-2.mp3" },
+    { "texto": "tres", "audio": "audio/comun/num-3.mp3" },
+    { "texto": "cuatro", "audio": "audio/comun/num-4.mp3" },
+    { "texto": "cinco", "audio": "audio/comun/num-5.mp3" },
+    { "texto": "seis", "audio": "audio/comun/num-6.mp3" },
+    { "texto": "siete", "audio": "audio/comun/num-7.mp3" },
+    { "texto": "ocho", "audio": "audio/comun/num-8.mp3" },
+    { "texto": "nueve", "audio": "audio/comun/num-9.mp3" },
+    { "texto": "diez", "audio": "audio/comun/num-10.mp3" }
+  ]
+}

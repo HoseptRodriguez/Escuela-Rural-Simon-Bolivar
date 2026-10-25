@@ -1,0 +1,15 @@
+{
+  "cursos": [
+    { "id": "transicion", "nombre": "Transición", "leen": false, "color": "#ff5d8f", "img": "img/ui/transicion.svg" },
+    { "id": "primero", "nombre": "Primero", "leen": true, "color": "#3ec1d3", "img": "img/ui/primero.svg" },
+    { "id": "segundo", "nombre": "Segundo", "leen": true, "color": "#ffd23f", "img": "img/ui/segundo.svg" }
+  ],
+  "materias": [
+    { "id": "matematicas", "nombre": "Matemáticas", "color": "#ff9f1c", "img": "img/ui/matematicas.svg" },
+    { "id": "biologia", "nombre": "Biología", "color": "#7bd389", "img": "img/ui/biologia.svg" },
+    { "id": "sociales", "nombre": "Sociales", "color": "#f4a261", "img": "img/ui/sociales.svg" },
+    { "id": "informatica", "nombre": "Informática", "color": "#90a8ff", "img": "img/ui/informatica.svg" },
+    { "id": "lectoescritura", "nombre": "Lectura", "color": "#ffb3c6", "img": "img/ui/lectoescritura.svg" },
+    { "id": "ingles", "nombre": "Inglés", "color": "#5ee0c8", "img": "img/ui/ingles.svg" }
+  ]
+}

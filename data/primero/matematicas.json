@@ -1,0 +1,34 @@
+{
+  "curso": "primero",
+  "materia": "matematicas",
+  "actividades": [
+    {
+      "id": "p-mat-01",
+      "titulo": "Número y cantidad",
+      "tipo": "memoria",
+      "imagen": "img/obj/flor.svg",
+      "dba": "DBA 1",
+      "dba_texto": "Identifica los usos de los números (como código, cardinal, medida, ordinal) y las operaciones (contar, quitar, juntar).",
+      "dba_verificado": false,
+      "instruccion": "Busca el número que va con cada grupo.",
+      "audio": "audio/primero/matematicas/p-mat-01.mp3",
+      "rondas": [
+        {
+          "pares": [
+            { "id": "2", "a": { "texto": "2" }, "b": { "img": "img/obj/manzana.svg", "n": 2 } },
+            { "id": "4", "a": { "texto": "4" }, "b": { "img": "img/obj/flor.svg", "n": 4 } },
+            { "id": "6", "a": { "texto": "6" }, "b": { "img": "img/obj/pez.svg", "n": 6 } }
+          ]
+        },
+        {
+          "pares": [
+            { "id": "3", "a": { "texto": "3" }, "b": { "img": "img/obj/pez.svg", "n": 3 } },
+            { "id": "5", "a": { "texto": "5" }, "b": { "img": "img/obj/manzana.svg", "n": 5 } },
+            { "id": "7", "a": { "texto": "7" }, "b": { "img": "img/obj/flor.svg", "n": 7 } },
+            { "id": "9", "a": { "texto": "9" }, "b": { "img": "img/obj/manzana.svg", "n": 9 } }
+          ]
+        }
+      ]
+    }
+  ]
+}

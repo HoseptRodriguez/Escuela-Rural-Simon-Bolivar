@@ -1,0 +1,24 @@
+{
+  "curso": "segundo",
+  "materia": "matematicas",
+  "actividades": [
+    {
+      "id": "s-mat-01",
+      "titulo": "Sumas hasta 10",
+      "tipo": "opcion",
+      "imagen": "img/obj/manzana.svg",
+      "dba": "DBA 2",
+      "dba_texto": "Utiliza diferentes estrategias para calcular (agrupar, quitar, juntar) o estimar el resultado de una suma y resta.",
+      "dba_verificado": false,
+      "instruccion": "Cuenta y toca el resultado de la suma.",
+      "audio": "audio/segundo/matematicas/s-mat-01.mp3",
+      "rondas": [
+        { "enunciado": [{ "img": "img/obj/manzana.svg", "n": 2 }, "+", { "img": "img/obj/manzana.svg", "n": 3 }, "="], "opciones": [4, 5, 6], "correcta": 5 },
+        { "enunciado": [{ "img": "img/obj/flor.svg", "n": 4 }, "+", { "img": "img/obj/flor.svg", "n": 2 }, "="], "opciones": [5, 6, 7], "correcta": 6 },
+        { "enunciado": [{ "img": "img/obj/pez.svg", "n": 3 }, "+", { "img": "img/obj/pez.svg", "n": 4 }, "="], "opciones": [6, 7, 8], "correcta": 7 },
+        { "enunciado": [{ "img": "img/obj/manzana.svg", "n": 5 }, "+", { "img": "img/obj/manzana.svg", "n": 3 }, "="], "opciones": [7, 8, 9], "correcta": 8 },
+        { "enunciado": [{ "img": "img/obj/flor.svg", "n": 6 }, "+", { "img": "img/obj/flor.svg", "n": 4 }, "="], "opciones": [9, 10, 8], "correcta": 10 }
+      ]
+    }
+  ]
+}

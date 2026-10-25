@@ -1,0 +1,25 @@
+{
+  "curso": "transicion",
+  "materia": "matematicas",
+  "actividades": [
+    {
+      "id": "t-mat-01",
+      "titulo": "Contemos del 1 al 5",
+      "tipo": "tocar",
+      "imagen": "img/obj/manzana.svg",
+      "dba": "DBA 12",
+      "dba_texto": "Determina la cantidad de objetos que conforman una colección.",
+      "dba_verificado": false,
+      "instruccion": "Toca cada manzana y cuenta conmigo.",
+      "audio": "audio/transicion/matematicas/t-mat-01.mp3",
+      "rondas": [
+        { "contar": { "img": "img/obj/manzana.svg", "cantidad": 2, "opciones": [1, 2, 3] } },
+        { "instruccion": "Toca cada flor y cuenta conmigo.", "audio": "audio/transicion/matematicas/t-mat-01-flor.mp3",
+          "contar": { "img": "img/obj/flor.svg", "cantidad": 3, "opciones": [2, 3, 4] } },
+        { "instruccion": "Toca cada pez y cuenta conmigo.", "audio": "audio/transicion/matematicas/t-mat-01-pez.mp3",
+          "contar": { "img": "img/obj/pez.svg", "cantidad": 4, "opciones": [3, 4, 5] } },
+        { "contar": { "img": "img/obj/manzana.svg", "cantidad": 5, "opciones": [3, 4, 5] } }
+      ]
+    }
+  ]
+}

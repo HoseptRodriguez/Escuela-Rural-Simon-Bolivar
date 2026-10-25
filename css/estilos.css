@@ -1,0 +1,245 @@
+/* Estilo retro 8-bit. Compatible con Chrome 109: sin :has, sin container queries. */
+@font-face {
+  font-family: 'Press Start 2P';
+  src: url(../fonts/press-start-2p.woff2) format('woff2');
+  font-display: swap;
+}
+:root {
+  --fondo: #2d1b69;
+  --tinta: #111;
+  --papel: #fff8e7;
+  --amarillo: #ffd23f;
+  --rosa: #ff5d8f;
+  --cian: #3ec1d3;
+  --verde: #7bd389;
+  --naranja: #ff9f1c;
+  --rojo: #e63946;
+  --pixel: 'Press Start 2P', monospace;
+  --legible: Verdana, Tahoma, 'Segoe UI', sans-serif;
+  --sombra: 6px 6px 0 var(--tinta);
+  --borde: 4px solid var(--tinta);
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background-color: var(--fondo);
+  background-image: radial-gradient(rgba(255,255,255,.12) 2px, transparent 2px);
+  background-size: 24px 24px;
+  color: var(--tinta);
+  font-family: var(--legible);
+  -webkit-user-select: none; user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+#app { min-height: 100%; display: flex; flex-direction: column; }
+.aviso { color: var(--papel); font-size: 24px; text-align: center; padding: 40px 16px; }
+
+/* ---------- Botones ---------- */
+.btn {
+  font: inherit; color: inherit; cursor: pointer;
+  background: var(--color, var(--papel));
+  border: var(--borde); border-radius: 12px;
+  box-shadow: var(--sombra);
+  min-width: 80px; min-height: 80px;
+  padding: 10px;
+  touch-action: manipulation;
+  transition: transform .06s, box-shadow .06s;
+}
+.btn:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0 var(--tinta); }
+.btn:disabled { opacity: .45; box-shadow: none; }
+.btn.pronto { filter: grayscale(1); }
+.icono { display: inline-block; width: 40px; height: 40px; }
+.icono svg { width: 100%; height: 100%; display: block; }
+.btn-icono { display: flex; align-items: center; justify-content: center; background: var(--amarillo); flex: none; }
+.btn-icono.casa { background: var(--rosa); }
+.btn-icono.repetir { background: var(--cian); margin-left: auto; }
+
+/* ---------- Barra superior ---------- */
+.barra {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px; background: var(--tinta);
+  position: sticky; top: 0; z-index: 5;
+}
+.barra .btn { min-height: 64px; min-width: 80px; box-shadow: 4px 4px 0 #555; }
+.titulo {
+  font: 14px/1.5 var(--pixel); color: var(--amarillo); margin: 0;
+  flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  text-shadow: 3px 3px 0 var(--rosa);
+}
+.puntos { display: flex; gap: 6px; flex-wrap: wrap; max-width: 30%; }
+.punto { width: 16px; height: 16px; background: #555; border: 2px solid var(--papel); }
+.punto.actual { background: var(--amarillo); }
+.punto.hecho { background: var(--verde); }
+
+/* ---------- Mascota y globo ---------- */
+.guia { display: flex; align-items: center; gap: 12px; padding: 10px 16px; }
+.mascota { background: none; border: 0; padding: 0; width: 84px; height: 84px; flex: none; cursor: pointer; }
+.mascota img { width: 100%; height: 100%; }
+.mascota.habla { animation: hablar .35s steps(2) infinite; }
+@keyframes hablar { 50% { transform: translateY(-6px); } }
+.globo {
+  position: relative; flex: 1; display: flex; align-items: center; gap: 12px;
+  background: var(--papel); border: var(--borde); border-radius: 12px; box-shadow: var(--sombra);
+  padding: 12px 16px; min-height: 64px; cursor: pointer;
+}
+.globo::before {
+  content: ''; position: absolute; left: -18px; top: 50%; margin-top: -10px;
+  border: 10px solid transparent; border-right: 14px solid var(--tinta);
+}
+.globo-txt { font-size: 24px; font-weight: bold; line-height: 1.3; }
+.globo-icono { flex: none; color: var(--fondo); }
+.no-leen .globo { flex: none; }
+.no-leen .globo-txt { display: none; }
+
+/* ---------- Pantallas de menú ---------- */
+.pantalla {
+  flex: 1; display: flex; flex-wrap: wrap; align-content: center; justify-content: center;
+  gap: 24px; padding: 16px 16px 32px;
+}
+.fig { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; pointer-events: none; }
+.fig-imgs { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
+.fig img { width: 96px; height: 96px; display: block; }
+.fig-imgs.varias img { width: 56px; height: 56px; }
+.fig-txt { font: 16px/1.4 var(--pixel); text-align: center; }
+.fig-trad { font-size: 18px; color: #555; }
+
+.btn-curso { width: 260px; height: 260px; }
+.btn-curso .fig img { width: 150px; height: 150px; }
+.btn-curso .fig-txt { font-size: 18px; }
+.btn-materia, .btn-perfil { width: 200px; height: 190px; }
+.btn-materia .fig-txt, .btn-perfil .fig-txt { font-size: 13px; }
+.pantalla.materias { width: 100%; max-width: 760px; margin: 0 auto; }
+.btn-actividad { width: 260px; min-height: 220px; }
+.btn-actividad .fig-txt { font-family: var(--legible); font-weight: bold; font-size: 20px; }
+.mini-estrellas .icono { width: 28px; height: 28px; }
+.icono.llena { color: var(--amarillo); filter: drop-shadow(2px 2px 0 var(--tinta)); }
+.icono.vacia { color: #ccc; }
+.btn-maestra {
+  position: fixed; right: 16px; bottom: 16px;
+  display: flex; align-items: center; justify-content: center;
+  background: #888; min-width: 64px; min-height: 64px; box-shadow: 4px 4px 0 var(--tinta);
+}
+
+/* ---------- Escena de actividad ---------- */
+.escena {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 20px; padding: 8px 16px 24px;
+}
+.enunciado {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 16px;
+  background: var(--papel); border: var(--borde); border-radius: 12px; padding: 12px 20px;
+}
+.enunciado .fig-txt { font-size: 36px; }
+.enunciado .fig-imgs { max-width: 200px; }
+.opciones, .tocar { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+.btn-opcion { min-width: 150px; min-height: 150px; }
+.btn-opcion .fig-txt { font-size: 32px; }
+.btn-opcion .fig img + .fig-txt, .btn-opcion .fig-imgs + .fig-txt { font-size: 18px; }
+.btn.ok { background: var(--verde); }
+.error { animation: sacudir .4s; background: var(--rojo) !important; }
+@keyframes sacudir { 25% { transform: translateX(-10px); } 75% { transform: translateX(10px); } }
+
+.btn-objeto { position: relative; width: 140px; height: 140px; }
+.btn-objeto.ok::after {
+  content: attr(data-n); position: absolute; top: -14px; right: -14px;
+  font: 22px/44px var(--pixel); width: 48px; height: 48px;
+  background: var(--amarillo); border: var(--borde); border-radius: 50%;
+}
+
+/* Memoria */
+.memoria { display: grid; grid-template-columns: repeat(var(--cols, 4), 1fr); gap: 16px; }
+.carta { width: 130px; height: 130px; background: var(--cian); position: relative; }
+.carta .dorso { font: 40px var(--pixel); color: var(--papel); text-shadow: 3px 3px 0 var(--tinta); }
+.carta .cara { display: none; }
+.carta.abierta { background: var(--papel); animation: girar .2s; }
+.carta.abierta .dorso { display: none; }
+.carta.abierta .cara { display: flex; }
+.carta.ok { background: var(--verde); }
+.carta .fig img { width: 80px; height: 80px; }
+.carta .fig-imgs.varias img { width: 34px; height: 34px; }
+.carta .fig-txt { font-size: 40px; }
+@keyframes girar { from { transform: scaleX(0); } }
+
+/* Arrastrar */
+.bandeja { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; min-height: 130px; }
+.ficha {
+  background: var(--papel); border: var(--borde); border-radius: 12px; box-shadow: var(--sombra);
+  width: 120px; height: 120px; display: flex; align-items: center; justify-content: center;
+  touch-action: none; cursor: grab; position: relative;
+}
+.ficha .fig img { width: 84px; height: 84px; }
+.ficha.elegida { outline: 6px solid var(--amarillo); }
+.ficha.arrastrando { z-index: 20; box-shadow: 12px 12px 0 rgba(0,0,0,.5); }
+.ficha.ok { width: 84px; height: 84px; box-shadow: none; background: var(--verde); cursor: default; }
+.ficha.ok .fig img { width: 60px; height: 60px; }
+.cajas { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; }
+.caja {
+  flex: 1; min-width: 200px; max-width: 320px; min-height: 200px;
+  background: var(--color, #ffe9a8); border: 4px dashed var(--tinta); border-radius: 16px; padding: 10px;
+}
+.caja-tit img { width: 64px; height: 64px; }
+.caja-dentro { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 8px; }
+
+/* ---------- Celebración ---------- */
+.celebracion {
+  position: fixed; inset: 0; z-index: 30;
+  background: rgba(20, 10, 50, .85);
+  display: flex; align-items: center; justify-content: center; padding: 16px;
+}
+.celebracion-caja {
+  background: var(--papel); border: var(--borde); border-radius: 16px; box-shadow: 10px 10px 0 var(--tinta);
+  padding: 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px;
+}
+.celebracion-buho { width: 100px; height: 100px; animation: hablar .5s steps(2) infinite; }
+.estrellas-grandes { display: flex; gap: 12px; }
+.estrellas-grandes .icono { width: 90px; height: 90px; animation: aparecer .4s backwards; }
+@keyframes aparecer { from { transform: scale(0) rotate(-90deg); } }
+.celebracion-txt { font: 20px/1.4 var(--pixel); margin: 0; }
+.fila-botones { display: flex; gap: 20px; }
+.btn-grande { min-width: 96px; min-height: 96px; display: flex; align-items: center; justify-content: center; background: var(--amarillo); }
+.btn-grande.verde { background: var(--verde); }
+
+/* ---------- Pantallas bajas (1024x600 apaisado) ---------- */
+@media (max-height: 700px) {
+  .guia { padding: 6px 16px; }
+  .mascota { width: 72px; height: 72px; }
+  .globo { min-height: 56px; padding: 8px 14px; }
+  .globo-txt { font-size: 20px; }
+  .btn-curso { width: 230px; height: 230px; }
+  .btn-curso .fig img { width: 120px; height: 120px; }
+  .btn-materia { width: 180px; height: 150px; }
+  .btn-materia .fig img { width: 72px; height: 72px; }
+  .pantalla { gap: 18px; }
+  .btn-opcion { min-width: 130px; min-height: 130px; }
+  .fig img { width: 80px; height: 80px; }
+  .carta { width: 100px; height: 100px; }
+  .carta .fig img { width: 64px; height: 64px; }
+  .caja { min-height: 150px; }
+  .escena { gap: 14px; }
+}
+/* ---------- Tablet vertical (800x1280): todo más grande ---------- */
+@media (min-height: 1000px) {
+  .mascota { width: 110px; height: 110px; }
+  .globo-txt { font-size: 28px; }
+  .fig img { width: 130px; height: 130px; }
+  .fig-imgs.varias img { width: 70px; height: 70px; }
+  .btn-opcion { min-width: 200px; min-height: 200px; }
+  .btn-opcion .fig-txt { font-size: 44px; }
+  .btn-objeto { width: 180px; height: 180px; }
+  .carta { width: 190px; height: 190px; }
+  .carta .fig img { width: 120px; height: 120px; }
+  .carta .fig-imgs.varias img { width: 48px; height: 48px; }
+  .ficha { width: 150px; height: 150px; }
+  .ficha .fig img { width: 110px; height: 110px; }
+  .caja { min-height: 300px; }
+  .btn-materia { width: 230px; height: 230px; }
+  .btn-materia .fig img { width: 120px; height: 120px; }
+  .btn-actividad { width: 320px; min-height: 280px; }
+  .enunciado .fig-imgs { max-width: 240px; }
+  .escena, .pantalla { gap: 36px; }
+}
+@media (max-width: 600px) {
+  .btn-curso { width: 200px; height: 200px; }
+  .btn-materia { width: 150px; height: 160px; }
+  .titulo { font-size: 11px; }
+}

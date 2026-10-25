@@ -1,0 +1,42 @@
+{
+  "curso": "segundo",
+  "materia": "biologia",
+  "actividades": [
+    {
+      "id": "s-bio-01",
+      "titulo": "¿Dónde viven?",
+      "tipo": "tocar",
+      "imagen": "img/obj/pez.svg",
+      "dba": "DBA 3",
+      "dba_texto": "Comprende la relación entre las características físicas de plantas y animales con los ambientes en donde viven, teniendo en cuenta sus necesidades básicas.",
+      "dba_verificado": true,
+      "instruccion": "Toca todos los animales que viven en el agua.",
+      "audio": "audio/segundo/biologia/s-bio-01.mp3",
+      "rondas": [
+        {
+          "correctos": ["pez", "rana", "tortuga"],
+          "items": [
+            { "id": "pez", "img": "img/obj/pez.svg", "texto": "Pez", "audio": "audio/segundo/biologia/pez.mp3" },
+            { "id": "rana", "img": "img/obj/rana.svg", "texto": "Rana", "audio": "audio/segundo/biologia/rana.mp3" },
+            { "id": "tortuga", "img": "img/obj/tortuga.svg", "texto": "Tortuga", "audio": "audio/segundo/biologia/tortuga.mp3" },
+            { "id": "perro", "img": "img/obj/perro.svg", "texto": "Perro", "audio": "audio/segundo/biologia/perro.mp3" },
+            { "id": "vaca", "img": "img/obj/vaca.svg", "texto": "Vaca", "audio": "audio/segundo/biologia/vaca.mp3" },
+            { "id": "mariposa", "img": "img/obj/mariposa.svg", "texto": "Mariposa", "audio": "audio/segundo/biologia/mariposa.mp3" }
+          ]
+        },
+        {
+          "instruccion": "Ahora toca los animales que vuelan.",
+          "audio": "audio/segundo/biologia/s-bio-01-vuelan.mp3",
+          "correctos": ["pajaro", "mariposa"],
+          "items": [
+            { "id": "pajaro", "img": "img/obj/pajaro.svg", "texto": "Pájaro", "audio": "audio/segundo/biologia/pajaro.mp3" },
+            { "id": "mariposa", "img": "img/obj/mariposa.svg", "texto": "Mariposa", "audio": "audio/segundo/biologia/mariposa.mp3" },
+            { "id": "vaca", "img": "img/obj/vaca.svg", "texto": "Vaca", "audio": "audio/segundo/biologia/vaca.mp3" },
+            { "id": "pez", "img": "img/obj/pez.svg", "texto": "Pez", "audio": "audio/segundo/biologia/pez.mp3" },
+            { "id": "perro", "img": "img/obj/perro.svg", "texto": "Perro", "audio": "audio/segundo/biologia/perro.mp3" }
+          ]
+        }
+      ]
+    }
+  ]
+}

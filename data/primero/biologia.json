@@ -1,0 +1,33 @@
+{
+  "curso": "primero",
+  "materia": "biologia",
+  "actividades": [
+    {
+      "id": "p-bio-01",
+      "titulo": "Seres vivos y cosas",
+      "tipo": "arrastrar",
+      "imagen": "img/obj/perro.svg",
+      "dba": "DBA 3",
+      "dba_texto": "Comprende que los seres vivos (plantas y animales) tienen características comunes (se alimentan, respiran, tienen un ciclo de vida, responden al entorno) y los diferencia de los objetos inertes.",
+      "dba_verificado": false,
+      "instruccion": "Lleva cada dibujo a su caja: seres vivos o cosas.",
+      "audio": "audio/primero/biologia/p-bio-01.mp3",
+      "rondas": [
+        {
+          "cajas": [
+            { "id": "vivo", "img": "img/obj/brote.svg", "texto": "Seres vivos" },
+            { "id": "cosa", "img": "img/obj/caja.svg", "texto": "Cosas" }
+          ],
+          "items": [
+            { "id": "perro", "img": "img/obj/perro.svg", "caja": "vivo", "voz": "Perro", "audio": "audio/primero/biologia/perro.mp3" },
+            { "id": "flor", "img": "img/obj/flor.svg", "caja": "vivo", "voz": "Flor", "audio": "audio/primero/biologia/flor.mp3" },
+            { "id": "pajaro", "img": "img/obj/pajaro.svg", "caja": "vivo", "voz": "Pájaro", "audio": "audio/primero/biologia/pajaro.mp3" },
+            { "id": "piedra", "img": "img/obj/piedra.svg", "caja": "cosa", "voz": "Piedra", "audio": "audio/primero/biologia/piedra.mp3" },
+            { "id": "pelota", "img": "img/obj/pelota.svg", "caja": "cosa", "voz": "Pelota", "audio": "audio/primero/biologia/pelota.mp3" },
+            { "id": "silla", "img": "img/obj/silla.svg", "caja": "cosa", "voz": "Silla", "audio": "audio/primero/biologia/silla.mp3" }
+          ]
+        }
+      ]
+    }
+  ]
+}
