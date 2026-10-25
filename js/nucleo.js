@@ -87,7 +87,7 @@
         const o = ctx.createOscillator(), g = ctx.createGain();
         o.type = onda || 'square';
         o.frequency.value = n[0];
-        g.gain.setValueAtTime(0.08, t);
+        g.gain.setValueAtTime(0.18, t);
         g.gain.exponentialRampToValueAtTime(0.001, t + n[1]);
         o.connect(g); g.connect(ctx.destination);
         o.start(t); o.stop(t + n[1]);

@@ -99,6 +99,18 @@
     }, function () { ir('#/curso/' + cid); });
   }
 
+  function arranque() {
+    const capa = el('div', 'arranque');
+    const b = E.boton('btn-arranque', null, function () {
+      capa.remove();
+      ruta(); // vuelve a dibujar la pantalla para que la mascota hable, ya con sonido
+    });
+    b.setAttribute('aria-label', 'Empezar');
+    b.innerHTML = '<img src="img/ui/buho.svg" alt=""><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M10 6v20l16-10z" fill="currentColor"/></svg>';
+    capa.appendChild(b);
+    document.body.appendChild(capa);
+  }
+
   function ruta() {
     E.detenerVoz();
     const p = location.hash.replace(/^#\/?/, '').split('/');
@@ -114,6 +126,9 @@
     E.comun = r[1];
     window.addEventListener('hashchange', ruta);
     ruta();
+    // Chrome no deja sonar audio hasta el primer toque: se pide con un botón grande de inicio
+    const ua = navigator.userActivation;
+    if (!ua || !ua.hasBeenActive) arranque();
   }, function () {
     app.replaceChildren(el('p', 'aviso', 'No se pudo cargar el contenido. Revisa la conexión y recarga la página.'));
   });

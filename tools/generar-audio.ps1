@@ -48,8 +48,8 @@ foreach ($ruta in $pendientes.Keys) {
   $voz.SetOutputToWaveFile($tmp)
   $voz.Speak($e.texto)
   $voz.SetOutputToNull()
-  # mono, 22 kHz, 40 kbps: ~5 KB por segundo
-  & $ffmpeg -y -loglevel error -i $tmp -ac 1 -ar 22050 -b:a 40k $destino
+  # volumen normalizado (-16 LUFS); mono, 22 kHz, 40 kbps: ~5 KB por segundo
+  & $ffmpeg -y -loglevel error -i $tmp -af "loudnorm=I=-16:TP=-1.5" -ac 1 -ar 22050 -b:a 40k $destino
   $hechos++
   Write-Output "OK  $ruta  <- $($e.texto)"
 }
