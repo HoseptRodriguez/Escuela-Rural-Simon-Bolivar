@@ -3,15 +3,22 @@
 # Idioma: "idioma": "en" en el objeto o en la actividad usa la voz inglesa.
 # No sobrescribe archivos existentes (las grabaciones de la maestra se respetan); usa -Forzar para regenerar.
 #
-# Uso:  powershell -ExecutionPolicy Bypass -File tools\generar-audio.ps1
-# Requiere: voces de Windows (Sabina es-MX, Zira en-US) y ffmpeg (winget install Gyan.FFmpeg).
-param([switch]$Forzar)
+# Uso:  powershell -ExecutionPolicy Bypass -File tools\generar-audio.ps1 [-Forzar] [-Motor edge|sapi]
+# Motor "edge" (por defecto): voces neuronales con edge-tts (pip install --user edge-tts), necesita internet.
+#   Español: es-CO-SalomeNeural (Colombia). Inglés: en-US-AnaNeural (voz infantil).
+# Motor "sapi": voces de Windows sin internet (Sabina es-MX, Zira en-US), más robóticas.
+# Requiere ffmpeg (winget install Gyan.FFmpeg).
+param([switch]$Forzar, [ValidateSet('edge', 'sapi')][string]$Motor = 'edge')
 
 $ErrorActionPreference = 'Stop'
 $raiz = Split-Path $PSScriptRoot -Parent
-Add-Type -AssemblyName System.Speech
-$voz = New-Object System.Speech.Synthesis.SpeechSynthesizer
-$voces = @{ es = 'Microsoft Sabina Desktop'; en = 'Microsoft Zira Desktop' }
+if ($Motor -eq 'sapi') {
+  Add-Type -AssemblyName System.Speech
+  $voz = New-Object System.Speech.Synthesis.SpeechSynthesizer
+  $voces = @{ es = 'Microsoft Sabina Desktop'; en = 'Microsoft Zira Desktop' }
+} else {
+  $voces = @{ es = 'es-CO-SalomeNeural'; en = 'en-US-AnaNeural' }
+}
 
 $ffmpeg = (Get-Command ffmpeg -ErrorAction SilentlyContinue).Source
 if (-not $ffmpeg) {
@@ -36,22 +43,33 @@ Get-ChildItem (Join-Path $raiz 'data') -Recurse -Filter *.json | ForEach-Object 
   Get-AudioEntries (Get-Content $_.FullName -Raw -Encoding UTF8 | ConvertFrom-Json) 'es'
 }
 
-$tmp = Join-Path $env:TEMP 'escuela-voz.wav'
+$tmp = Join-Path $env:TEMP $(if ($Motor -eq 'sapi') { 'escuela-voz.wav' } else { 'escuela-voz-edge.mp3' })
+$txt = Join-Path $env:TEMP 'escuela-voz.txt'
 $hechos = 0
 foreach ($ruta in $pendientes.Keys) {
   $destino = Join-Path $raiz $ruta
   if ((Test-Path $destino) -and -not $Forzar) { continue }
   New-Item -ItemType Directory -Force (Split-Path $destino) | Out-Null
   $e = $pendientes[$ruta]
-  $voz.SelectVoice($voces[$e.idioma])
-  $voz.Rate = -1   # un poco más lento para niños
-  $voz.SetOutputToWaveFile($tmp)
-  $voz.Speak($e.texto)
-  $voz.SetOutputToNull()
+  if ($Motor -eq 'sapi') {
+    $voz.SelectVoice($voces[$e.idioma])
+    $voz.Rate = -1   # un poco más lento para niños
+    $voz.SetOutputToWaveFile($tmp)
+    $voz.Speak($e.texto)
+    $voz.SetOutputToNull()
+  } else {
+    # El texto va en archivo UTF-8 para no perder tildes ni signos al pasarlo como argumento
+    [IO.File]::WriteAllText($txt, $e.texto, (New-Object Text.UTF8Encoding $false))
+    # En PowerShell 5.1 cualquier salida de error de un programa externo detiene el script con 'Stop'
+    $ErrorActionPreference = 'Continue'
+    & python -m edge_tts --voice $voces[$e.idioma] --rate=-10% --file $txt --write-media $tmp 2>$null
+    $ErrorActionPreference = 'Stop'
+    if ($LASTEXITCODE -ne 0) { throw "edge-tts falló con: $($e.texto)" }
+  }
   # volumen normalizado (-16 LUFS); mono, 22 kHz, 40 kbps: ~5 KB por segundo
   & $ffmpeg -y -loglevel error -i $tmp -af "loudnorm=I=-16:TP=-1.5" -ac 1 -ar 22050 -b:a 40k $destino
   $hechos++
   Write-Output "OK  $ruta  <- $($e.texto)"
 }
-Remove-Item $tmp -ErrorAction SilentlyContinue
+Remove-Item $tmp, $txt -ErrorAction SilentlyContinue
 Write-Output "$hechos audios generados ($($pendientes.Count) en total en los JSON)."
