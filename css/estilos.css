@@ -141,6 +141,8 @@ body {
 .opciones, .tocar { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
 .btn-opcion { min-width: 150px; min-height: 150px; }
 .btn-opcion .fig-txt { font-size: 56px; }
+.btn-opcion .fig.palabra .fig-txt { font: bold 26px var(--legible); }
+.btn-opcion .fig-trad, .carta .fig-trad { font-size: 16px; }
 .btn-opcion .fig img + .fig-txt, .btn-opcion .fig-imgs + .fig-txt { font-size: 18px; }
 .btn.ok { background: var(--verde); }
 .error { animation: sacudir .4s; background: var(--rojo) !important; }
@@ -164,6 +166,7 @@ body {
 .carta.ok { background: var(--verde); }
 .carta .fig img { width: 80px; height: 80px; }
 .carta .fig-imgs.varias img { width: 34px; height: 34px; }
+.carta .fig-imgs.muchas img { width: 28px; height: 28px; }
 .carta .fig-txt { font-size: 40px; }
 .carta .cara.largo .fig-txt { font: bold 22px var(--legible); }
 @keyframes girar { from { transform: scaleX(0); } }
@@ -223,6 +226,8 @@ body {
   .carta { width: 100px; height: 100px; }
   .carta .fig img { width: 64px; height: 64px; }
   .carta .cara.largo .fig-txt { font-size: 18px; }
+  .carta .fig-imgs.muchas { gap: 2px; }
+  .carta .fig-imgs.muchas img { width: 20px; height: 20px; }
   .caja { min-height: 150px; }
   .escena { gap: 14px; }
 }
@@ -234,11 +239,14 @@ body {
   .fig-imgs.varias img { width: 70px; height: 70px; }
   .btn-opcion { min-width: 200px; min-height: 200px; }
   .btn-opcion .fig-txt { font-size: 72px; }
+  .btn-opcion .fig.palabra .fig-txt { font-size: 34px; }
+  .btn-opcion .fig-trad, .carta .fig-trad { font-size: 22px; }
   .btn-objeto { width: 180px; height: 180px; }
   .carta { width: 170px; height: 170px; }
   .carta .fig-txt { font-size: 60px; }
   .carta .fig img { width: 120px; height: 120px; }
   .carta .fig-imgs.varias img { width: 48px; height: 48px; }
+  .carta .fig-imgs.muchas img { width: 40px; height: 40px; }
   .carta .cara.largo .fig-txt { font-size: 32px; }
   .ficha { min-width: 150px; height: 150px; }
   .ficha .fig img { width: 110px; height: 110px; }

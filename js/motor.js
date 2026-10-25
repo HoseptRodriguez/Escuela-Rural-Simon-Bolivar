@@ -28,6 +28,7 @@
         imgs.appendChild(im);
       }
       if (f.n > 1) imgs.classList.add('varias');
+      if (f.n > 4) imgs.classList.add('muchas');
       d.appendChild(imgs);
     }
     if (f.texto != null) d.appendChild(el('span', 'fig-txt', String(f.texto)));
@@ -68,12 +69,16 @@
     globo.append(E.icono('repetir', 'globo-icono'), txt);
     g.append(m, globo);
     let ultimo = null;
-    g.decir = function (texto, audio, idioma) {
-      if (texto !== undefined) ultimo = [texto, audio, idioma];
+    g.decir = function (texto, audio, idioma, palabra) {
+      if (texto !== undefined) ultimo = [texto, audio, idioma, palabra];
       if (!ultimo) return;
-      txt.textContent = ultimo[0] || '';
+      const actual = ultimo, p = actual[3];
+      txt.textContent = (actual[0] || '') + (p ? ' ' + p.texto : '');
       m.classList.add('habla');
-      E.voz(ultimo[1], ultimo[0], ultimo[2]).then(function () { m.classList.remove('habla'); });
+      // Una palabra en otro idioma (inglés) suena después de la instrucción, con su propia voz
+      E.voz(actual[1], actual[0], actual[2]).then(function () {
+        if (p && ultimo === actual) return E.voz(p.audio, p.texto, p.idioma);
+      }).then(function () { m.classList.remove('habla'); });
     };
     m.addEventListener('click', function () { g.decir(); });
     globo.addEventListener('click', function () { g.decir(); });
@@ -114,7 +119,7 @@
       let cerrada = false;
       pintarPuntos();
       escena.replaceChildren();
-      guia.decir(r.instruccion || act.instruccion, r.audio || act.audio, act.idioma);
+      guia.decir(r.instruccion || act.instruccion, r.audio || act.audio, act.idioma, r.palabra);
       E.tipos[act.tipo](r, {
         escena: escena,
         leen: leen,

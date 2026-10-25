@@ -1,6 +1,7 @@
 /*
  * Tipo "opcion": el niño toca la respuesta correcta.
- * Ronda: { instruccion, audio, lectura?: "oración para leer", enunciado?: [figura...],
+ * Ronda: { instruccion, audio, palabra?: { texto, audio, idioma } (se dice tras la instrucción),
+ *          lectura?: "oración para leer", enunciado?: [figura...],
  *          opciones: [figura con id | número], correcta: id }
  */
 (function (E) {
@@ -15,7 +16,9 @@
     const grid = E.el('div', 'opciones');
     let resuelta = false;
     E.mezclar(r.opciones.map(E.normalizar)).forEach(function (o) {
-      const b = E.boton('btn-opcion', E.figura(o), function () {
+      // Opciones de solo palabras (no números) usan letra legible para que quepan
+      const palabra = !o.img && isNaN(o.texto) ? 'palabra' : '';
+      const b = E.boton('btn-opcion', E.figura(o, palabra), function () {
         if (resuelta) return;
         if (String(o.id) === String(r.correcta)) {
           resuelta = true;

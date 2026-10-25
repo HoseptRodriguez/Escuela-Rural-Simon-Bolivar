@@ -1,0 +1,151 @@
+{
+  "curso": "segundo",
+  "materia": "ingles",
+  "actividades": [
+    {
+      "id": "s-ing-01",
+      "titulo": "Greetings",
+      "tipo": "opcion",
+      "imagen": "img/obj/sol.svg",
+      "dba": "por verificar",
+      "referencia": "MEN, Currículo Sugerido de Inglés (Transición a 5°) y DBA de Inglés para primaria: saludos y despedidas.",
+      "dba_verificado": false,
+      "instruccion": "¿Qué dices en inglés? Toca el saludo correcto.",
+      "audio": "audio/segundo/ingles/s-ing-01.mp3",
+      "rondas": [
+        {
+          "instruccion": "¿Qué dices cuando llegas a la escuela en la mañana?",
+          "audio": "audio/segundo/ingles/s-ing-01-manana.mp3",
+          "enunciado": [
+            {
+              "img": "img/obj/sol.svg"
+            }
+          ],
+          "correcta": "good-morning",
+          "opciones": [
+            {
+              "id": "good-morning",
+              "texto": "Good morning",
+              "traduccion": "Buenos días",
+              "idioma": "en",
+              "audio": "audio/segundo/ingles/good-morning.mp3"
+            },
+            {
+              "id": "good-night",
+              "texto": "Good night",
+              "traduccion": "Buenas noches",
+              "idioma": "en",
+              "audio": "audio/segundo/ingles/good-night.mp3"
+            },
+            {
+              "id": "goodbye",
+              "texto": "Goodbye",
+              "traduccion": "Adiós",
+              "idioma": "en",
+              "audio": "audio/segundo/ingles/goodbye.mp3"
+            }
+          ]
+        },
+        {
+          "instruccion": "¿Qué dices antes de ir a dormir?",
+          "audio": "audio/segundo/ingles/s-ing-01-noche.mp3",
+          "enunciado": [
+            {
+              "img": "img/obj/luna.svg"
+            }
+          ],
+          "correcta": "good-night",
+          "opciones": [
+            {
+              "id": "good-night",
+              "texto": "Good night",
+              "traduccion": "Buenas noches",
+              "idioma": "en",
+              "audio": "audio/segundo/ingles/good-night.mp3"
+            },
+            {
+              "id": "hello",
+              "texto": "Hello",
+              "traduccion": "Hola",
+              "idioma": "en",
+              "audio": "audio/segundo/ingles/hello.mp3"
+            },
+            {
+              "id": "good-morning",
+              "texto": "Good morning",
+              "traduccion": "Buenos días",
+              "idioma": "en",
+              "audio": "audio/segundo/ingles/good-morning.mp3"
+            }
+          ]
+        },
+        {
+          "instruccion": "¿Qué dices cuando ves a un amigo?",
+          "audio": "audio/segundo/ingles/s-ing-01-amigo.mp3",
+          "enunciado": [
+            {
+              "img": "img/obj/mano.svg"
+            }
+          ],
+          "correcta": "hello",
+          "opciones": [
+            {
+              "id": "hello",
+              "texto": "Hello",
+              "traduccion": "Hola",
+              "idioma": "en",
+              "audio": "audio/segundo/ingles/hello.mp3"
+            },
+            {
+              "id": "goodbye",
+              "texto": "Goodbye",
+              "traduccion": "Adiós",
+              "idioma": "en",
+              "audio": "audio/segundo/ingles/goodbye.mp3"
+            },
+            {
+              "id": "good-night",
+              "texto": "Good night",
+              "traduccion": "Buenas noches",
+              "idioma": "en",
+              "audio": "audio/segundo/ingles/good-night.mp3"
+            }
+          ]
+        },
+        {
+          "instruccion": "¿Qué dices cuando te vas a tu casa?",
+          "audio": "audio/segundo/ingles/s-ing-01-casa.mp3",
+          "enunciado": [
+            {
+              "img": "img/obj/casa.svg"
+            }
+          ],
+          "correcta": "goodbye",
+          "opciones": [
+            {
+              "id": "goodbye",
+              "texto": "Goodbye",
+              "traduccion": "Adiós",
+              "idioma": "en",
+              "audio": "audio/segundo/ingles/goodbye.mp3"
+            },
+            {
+              "id": "good-morning",
+              "texto": "Good morning",
+              "traduccion": "Buenos días",
+              "idioma": "en",
+              "audio": "audio/segundo/ingles/good-morning.mp3"
+            },
+            {
+              "id": "hello",
+              "texto": "Hello",
+              "traduccion": "Hola",
+              "idioma": "en",
+              "audio": "audio/segundo/ingles/hello.mp3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

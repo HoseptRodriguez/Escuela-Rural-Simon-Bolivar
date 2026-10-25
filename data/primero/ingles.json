@@ -1,0 +1,88 @@
+{
+  "curso": "primero",
+  "materia": "ingles",
+  "actividades": [
+    {
+      "id": "p-ing-01",
+      "titulo": "Numbers 1 to 5",
+      "tipo": "memoria",
+      "imagen": "img/obj/manzana.svg",
+      "dba": "por verificar",
+      "referencia": "MEN, Currículo Sugerido de Inglés (Transición a 5°) y DBA de Inglés para primaria: números del 1 al 5.",
+      "dba_verificado": false,
+      "instruccion": "Une cada número en inglés con su grupo de dibujos.",
+      "audio": "audio/primero/ingles/p-ing-01.mp3",
+      "rondas": [
+        {
+          "pares": [
+            {
+              "id": "one",
+              "a": {
+                "texto": "one",
+                "traduccion": "uno",
+                "idioma": "en",
+                "audio": "audio/primero/ingles/one.mp3"
+              },
+              "b": {
+                "img": "img/obj/manzana.svg",
+                "n": 1
+              }
+            },
+            {
+              "id": "two",
+              "a": {
+                "texto": "two",
+                "traduccion": "dos",
+                "idioma": "en",
+                "audio": "audio/primero/ingles/two.mp3"
+              },
+              "b": {
+                "img": "img/obj/flor.svg",
+                "n": 2
+              }
+            },
+            {
+              "id": "three",
+              "a": {
+                "texto": "three",
+                "traduccion": "tres",
+                "idioma": "en",
+                "audio": "audio/primero/ingles/three.mp3"
+              },
+              "b": {
+                "img": "img/obj/pez.svg",
+                "n": 3
+              }
+            },
+            {
+              "id": "four",
+              "a": {
+                "texto": "four",
+                "traduccion": "cuatro",
+                "idioma": "en",
+                "audio": "audio/primero/ingles/four.mp3"
+              },
+              "b": {
+                "img": "img/obj/manzana.svg",
+                "n": 4
+              }
+            },
+            {
+              "id": "five",
+              "a": {
+                "texto": "five",
+                "traduccion": "cinco",
+                "idioma": "en",
+                "audio": "audio/primero/ingles/five.mp3"
+              },
+              "b": {
+                "img": "img/obj/flor.svg",
+                "n": 5
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

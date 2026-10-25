@@ -1,0 +1,199 @@
+{
+  "curso": "transicion",
+  "materia": "ingles",
+  "actividades": [
+    {
+      "id": "t-ing-01",
+      "titulo": "Colors",
+      "tipo": "opcion",
+      "imagen": "img/obj/color-rojo.svg",
+      "dba": "por verificar",
+      "referencia": "MEN, Currículo Sugerido de Inglés (Transición a 5°) y DBA de Inglés para primaria (Colombia Aprende): vocabulario de colores con imagen y sonido.",
+      "dba_verificado": false,
+      "instruccion": "Escucha el color en inglés y tócalo.",
+      "audio": "audio/transicion/ingles/t-ing-01.mp3",
+      "rondas": [
+        {
+          "instruccion": "Toca el color",
+          "audio": "audio/transicion/ingles/toca-color.mp3",
+          "palabra": {
+            "texto": "red",
+            "idioma": "en",
+            "audio": "audio/transicion/ingles/red.mp3"
+          },
+          "correcta": "red",
+          "opciones": [
+            {
+              "id": "red",
+              "img": "img/obj/color-rojo.svg",
+              "texto": "red",
+              "traduccion": "rojo",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/red.mp3"
+            },
+            {
+              "id": "blue",
+              "img": "img/obj/color-azul.svg",
+              "texto": "blue",
+              "traduccion": "azul",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/blue.mp3"
+            },
+            {
+              "id": "yellow",
+              "img": "img/obj/color-amarillo.svg",
+              "texto": "yellow",
+              "traduccion": "amarillo",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/yellow.mp3"
+            }
+          ]
+        },
+        {
+          "instruccion": "Toca el color",
+          "audio": "audio/transicion/ingles/toca-color.mp3",
+          "palabra": {
+            "texto": "blue",
+            "idioma": "en",
+            "audio": "audio/transicion/ingles/blue.mp3"
+          },
+          "correcta": "blue",
+          "opciones": [
+            {
+              "id": "blue",
+              "img": "img/obj/color-azul.svg",
+              "texto": "blue",
+              "traduccion": "azul",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/blue.mp3"
+            },
+            {
+              "id": "yellow",
+              "img": "img/obj/color-amarillo.svg",
+              "texto": "yellow",
+              "traduccion": "amarillo",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/yellow.mp3"
+            },
+            {
+              "id": "red",
+              "img": "img/obj/color-rojo.svg",
+              "texto": "red",
+              "traduccion": "rojo",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/red.mp3"
+            }
+          ]
+        },
+        {
+          "instruccion": "Toca el color",
+          "audio": "audio/transicion/ingles/toca-color.mp3",
+          "palabra": {
+            "texto": "yellow",
+            "idioma": "en",
+            "audio": "audio/transicion/ingles/yellow.mp3"
+          },
+          "correcta": "yellow",
+          "opciones": [
+            {
+              "id": "yellow",
+              "img": "img/obj/color-amarillo.svg",
+              "texto": "yellow",
+              "traduccion": "amarillo",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/yellow.mp3"
+            },
+            {
+              "id": "red",
+              "img": "img/obj/color-rojo.svg",
+              "texto": "red",
+              "traduccion": "rojo",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/red.mp3"
+            },
+            {
+              "id": "green",
+              "img": "img/obj/color-verde.svg",
+              "texto": "green",
+              "traduccion": "verde",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/green.mp3"
+            }
+          ]
+        },
+        {
+          "instruccion": "Toca el color",
+          "audio": "audio/transicion/ingles/toca-color.mp3",
+          "palabra": {
+            "texto": "green",
+            "idioma": "en",
+            "audio": "audio/transicion/ingles/green.mp3"
+          },
+          "correcta": "green",
+          "opciones": [
+            {
+              "id": "green",
+              "img": "img/obj/color-verde.svg",
+              "texto": "green",
+              "traduccion": "verde",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/green.mp3"
+            },
+            {
+              "id": "blue",
+              "img": "img/obj/color-azul.svg",
+              "texto": "blue",
+              "traduccion": "azul",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/blue.mp3"
+            },
+            {
+              "id": "yellow",
+              "img": "img/obj/color-amarillo.svg",
+              "texto": "yellow",
+              "traduccion": "amarillo",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/yellow.mp3"
+            }
+          ]
+        },
+        {
+          "instruccion": "Toca el color",
+          "audio": "audio/transicion/ingles/toca-color.mp3",
+          "palabra": {
+            "texto": "red",
+            "idioma": "en",
+            "audio": "audio/transicion/ingles/red.mp3"
+          },
+          "correcta": "red",
+          "opciones": [
+            {
+              "id": "red",
+              "img": "img/obj/color-rojo.svg",
+              "texto": "red",
+              "traduccion": "rojo",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/red.mp3"
+            },
+            {
+              "id": "green",
+              "img": "img/obj/color-verde.svg",
+              "texto": "green",
+              "traduccion": "verde",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/green.mp3"
+            },
+            {
+              "id": "blue",
+              "img": "img/obj/color-azul.svg",
+              "texto": "blue",
+              "traduccion": "azul",
+              "idioma": "en",
+              "audio": "audio/transicion/ingles/blue.mp3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
