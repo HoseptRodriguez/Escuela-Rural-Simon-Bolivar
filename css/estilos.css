@@ -165,6 +165,7 @@ body {
 .carta .fig img { width: 80px; height: 80px; }
 .carta .fig-imgs.varias img { width: 34px; height: 34px; }
 .carta .fig-txt { font-size: 40px; }
+.carta .cara.largo .fig-txt { font: bold 22px var(--legible); }
 @keyframes girar { from { transform: scaleX(0); } }
 
 /* Arrastrar */
@@ -221,6 +222,7 @@ body {
   .fig img { width: 80px; height: 80px; }
   .carta { width: 100px; height: 100px; }
   .carta .fig img { width: 64px; height: 64px; }
+  .carta .cara.largo .fig-txt { font-size: 18px; }
   .caja { min-height: 150px; }
   .escena { gap: 14px; }
 }
@@ -233,9 +235,11 @@ body {
   .btn-opcion { min-width: 200px; min-height: 200px; }
   .btn-opcion .fig-txt { font-size: 72px; }
   .btn-objeto { width: 180px; height: 180px; }
-  .carta { width: 190px; height: 190px; }
+  .carta { width: 170px; height: 170px; }
+  .carta .fig-txt { font-size: 60px; }
   .carta .fig img { width: 120px; height: 120px; }
   .carta .fig-imgs.varias img { width: 48px; height: 48px; }
+  .carta .cara.largo .fig-txt { font-size: 32px; }
   .ficha { min-width: 150px; height: 150px; }
   .ficha .fig img { width: 110px; height: 110px; }
   .caja { min-height: 300px; }

@@ -1,0 +1,42 @@
+{
+  "curso": "transicion",
+  "materia": "informatica",
+  "actividades": [
+    {
+      "id": "t-inf-01",
+      "titulo": "Partes del computador",
+      "tipo": "opcion",
+      "imagen": "img/obj/pantalla.svg",
+      "dba": null,
+      "referencia": "Sin DBA para tecnología. MEN, Guía 30 (Orientaciones para la educación en tecnología), componente Apropiación y uso de la tecnología: identifica artefactos de su entorno.",
+      "instruccion": "Escucha y toca la parte del computador.",
+      "audio": "audio/transicion/informatica/t-inf-01.mp3",
+      "rondas": [
+        { "instruccion": "Toca la pantalla.", "audio": "audio/transicion/informatica/t-inf-01-pantalla.mp3", "correcta": "pantalla",
+          "opciones": [
+            { "id": "pantalla", "img": "img/obj/pantalla.svg", "voz": "Pantalla", "audio": "audio/transicion/informatica/pantalla.mp3" },
+            { "id": "teclado", "img": "img/obj/teclado.svg", "voz": "Teclado", "audio": "audio/transicion/informatica/teclado.mp3" },
+            { "id": "raton", "img": "img/obj/raton.svg", "voz": "Ratón", "audio": "audio/transicion/informatica/raton.mp3" }
+          ] },
+        { "instruccion": "Toca el teclado.", "audio": "audio/transicion/informatica/t-inf-01-teclado.mp3", "correcta": "teclado",
+          "opciones": [
+            { "id": "audifonos", "img": "img/obj/audifonos.svg", "voz": "Audífonos", "audio": "audio/transicion/informatica/audifonos.mp3" },
+            { "id": "pantalla", "img": "img/obj/pantalla.svg", "voz": "Pantalla", "audio": "audio/transicion/informatica/pantalla.mp3" },
+            { "id": "teclado", "img": "img/obj/teclado.svg", "voz": "Teclado", "audio": "audio/transicion/informatica/teclado.mp3" }
+          ] },
+        { "instruccion": "Toca el ratón.", "audio": "audio/transicion/informatica/t-inf-01-raton.mp3", "correcta": "raton",
+          "opciones": [
+            { "id": "raton", "img": "img/obj/raton.svg", "voz": "Ratón", "audio": "audio/transicion/informatica/raton.mp3" },
+            { "id": "audifonos", "img": "img/obj/audifonos.svg", "voz": "Audífonos", "audio": "audio/transicion/informatica/audifonos.mp3" },
+            { "id": "teclado", "img": "img/obj/teclado.svg", "voz": "Teclado", "audio": "audio/transicion/informatica/teclado.mp3" }
+          ] },
+        { "instruccion": "Toca los audífonos.", "audio": "audio/transicion/informatica/t-inf-01-audifonos.mp3", "correcta": "audifonos",
+          "opciones": [
+            { "id": "pantalla", "img": "img/obj/pantalla.svg", "voz": "Pantalla", "audio": "audio/transicion/informatica/pantalla.mp3" },
+            { "id": "raton", "img": "img/obj/raton.svg", "voz": "Ratón", "audio": "audio/transicion/informatica/raton.mp3" },
+            { "id": "audifonos", "img": "img/obj/audifonos.svg", "voz": "Audífonos", "audio": "audio/transicion/informatica/audifonos.mp3" }
+          ] }
+      ]
+    }
+  ]
+}

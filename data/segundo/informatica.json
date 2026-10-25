@@ -1,0 +1,28 @@
+{
+  "curso": "segundo",
+  "materia": "informatica",
+  "actividades": [
+    {
+      "id": "s-inf-01",
+      "titulo": "¿Qué necesito?",
+      "tipo": "opcion",
+      "imagen": "img/obj/impresora.svg",
+      "dba": null,
+      "referencia": "Sin DBA para tecnología. MEN, Guía 30, componente Solución de problemas con tecnología: selecciona el artefacto adecuado para una tarea.",
+      "instruccion": "Lee lo que quiere hacer el niño y toca lo que necesita.",
+      "audio": "audio/segundo/informatica/s-inf-01.mp3",
+      "rondas": [
+        { "lectura": "Quiero escribir mi nombre.", "correcta": "teclado",
+          "opciones": [{ "id": "teclado", "img": "img/obj/teclado.svg" }, { "id": "audifonos", "img": "img/obj/audifonos.svg" }, { "id": "camara", "img": "img/obj/camara.svg" }] },
+        { "lectura": "Quiero escuchar una canción.", "correcta": "audifonos",
+          "opciones": [{ "id": "impresora", "img": "img/obj/impresora.svg" }, { "id": "audifonos", "img": "img/obj/audifonos.svg" }, { "id": "raton", "img": "img/obj/raton.svg" }] },
+        { "lectura": "Quiero tener mi dibujo en papel.", "correcta": "impresora",
+          "opciones": [{ "id": "pantalla", "img": "img/obj/pantalla.svg" }, { "id": "camara", "img": "img/obj/camara.svg" }, { "id": "impresora", "img": "img/obj/impresora.svg" }] },
+        { "lectura": "Quiero tomar una foto de mi perro.", "correcta": "camara",
+          "opciones": [{ "id": "camara", "img": "img/obj/camara.svg" }, { "id": "teclado", "img": "img/obj/teclado.svg" }, { "id": "impresora", "img": "img/obj/impresora.svg" }] },
+        { "lectura": "Quiero mover la flecha en la pantalla.", "correcta": "raton",
+          "opciones": [{ "id": "audifonos", "img": "img/obj/audifonos.svg" }, { "id": "raton", "img": "img/obj/raton.svg" }, { "id": "pantalla", "img": "img/obj/pantalla.svg" }] }
+      ]
+    }
+  ]
+}

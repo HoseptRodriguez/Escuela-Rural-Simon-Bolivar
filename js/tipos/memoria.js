@@ -37,7 +37,9 @@
           }, 1000);
         }
       });
-      b.append(E.el('span', 'dorso', '?'), E.figura(k.f, 'cara'));
+      // Las palabras usan letra legible y más pequeña; los números, letra pixel grande
+      const largo = k.f.texto != null && isNaN(k.f.texto) ? ' largo' : '';
+      b.append(E.el('span', 'dorso', '?'), E.figura(k.f, 'cara' + largo));
       grid.appendChild(b);
     });
     c.escena.appendChild(grid);

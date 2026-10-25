@@ -1,0 +1,26 @@
+{
+  "curso": "primero",
+  "materia": "informatica",
+  "actividades": [
+    {
+      "id": "p-inf-01",
+      "titulo": "¿Para qué sirve?",
+      "tipo": "memoria",
+      "imagen": "img/obj/teclado.svg",
+      "dba": null,
+      "referencia": "Sin DBA para tecnología. MEN, Guía 30, componente Apropiación y uso de la tecnología: reconoce la función de artefactos de uso cotidiano.",
+      "instruccion": "Une cada parte del computador con lo que hace.",
+      "audio": "audio/primero/informatica/p-inf-01.mp3",
+      "rondas": [
+        {
+          "pares": [
+            { "id": "teclado", "a": { "img": "img/obj/teclado.svg" }, "b": { "texto": "escribir", "audio": "audio/primero/informatica/escribir.mp3" } },
+            { "id": "pantalla", "a": { "img": "img/obj/pantalla.svg" }, "b": { "texto": "ver", "audio": "audio/primero/informatica/ver.mp3" } },
+            { "id": "audifonos", "a": { "img": "img/obj/audifonos.svg" }, "b": { "texto": "oír", "audio": "audio/primero/informatica/oir.mp3" } },
+            { "id": "raton", "a": { "img": "img/obj/raton.svg" }, "b": { "texto": "señalar", "audio": "audio/primero/informatica/senalar.mp3" } }
+          ]
+        }
+      ]
+    }
+  ]
+}
