@@ -32,6 +32,7 @@
   };
 
   /* ---------- Voz: mp3 pregrabado; la síntesis del navegador solo como respaldo ---------- */
+  const VERSION_AUDIO = 2; // súbela si se regeneran las voces y algún navegador guardó las viejas
   let sonando = null;
   E.detenerVoz = function () {
     if (sonando) { sonando.pause(); sonando = null; }
@@ -48,7 +49,8 @@
         hablar(texto, idioma, fin);
       };
       if (!src) return respaldo();
-      a = sonando = new Audio(src);
+      // ?v= obliga a descargar de nuevo los audios guardados en caché con la versión anterior
+      a = sonando = new Audio(src + '?v=' + VERSION_AUDIO);
       a.onended = function () { hecho = true; fin(); };
       a.onerror = respaldo;
       a.play().catch(respaldo);
