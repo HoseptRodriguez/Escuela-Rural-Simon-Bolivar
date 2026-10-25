@@ -1,0 +1,43 @@
+{
+  "curso": "primero",
+  "materia": "lectoescritura",
+  "actividades": [
+    {
+      "id": "p-lec-01",
+      "titulo": "Une la palabra con su dibujo",
+      "tipo": "arrastrar",
+      "imagen": "img/obj/casa.svg",
+      "dba": "DBA 6",
+      "dba_texto": "Asocia palabras escritas con las imágenes que representan (relación grafía-significado).",
+      "dba_verificado": false,
+      "instruccion": "Lee cada palabra y llévala a su dibujo.",
+      "audio": "audio/primero/lectoescritura/p-lec-01.mp3",
+      "rondas": [
+        {
+          "cajas": [
+            { "id": "sol", "img": "img/obj/sol.svg" },
+            { "id": "casa", "img": "img/obj/casa.svg" },
+            { "id": "pelota", "img": "img/obj/pelota.svg" }
+          ],
+          "items": [
+            { "id": "w-sol", "texto": "sol", "caja": "sol", "audio": "audio/primero/lectoescritura/sol.mp3" },
+            { "id": "w-casa", "texto": "casa", "caja": "casa", "audio": "audio/primero/lectoescritura/casa.mp3" },
+            { "id": "w-pelota", "texto": "pelota", "caja": "pelota", "audio": "audio/primero/lectoescritura/pelota.mp3" }
+          ]
+        },
+        {
+          "cajas": [
+            { "id": "mano", "img": "img/obj/mano.svg" },
+            { "id": "perro", "img": "img/obj/perro.svg" },
+            { "id": "flor", "img": "img/obj/flor.svg" }
+          ],
+          "items": [
+            { "id": "w-mano", "texto": "mano", "caja": "mano", "audio": "audio/primero/lectoescritura/mano.mp3" },
+            { "id": "w-perro", "texto": "perro", "caja": "perro", "audio": "audio/primero/lectoescritura/perro.mp3" },
+            { "id": "w-flor", "texto": "flor", "caja": "flor", "audio": "audio/primero/lectoescritura/flor.mp3" }
+          ]
+        }
+      ]
+    }
+  ]
+}

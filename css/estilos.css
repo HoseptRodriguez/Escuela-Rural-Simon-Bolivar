@@ -131,9 +131,16 @@ body {
 }
 .enunciado .fig-txt { font-size: 36px; }
 .enunciado .fig-imgs { max-width: 200px; }
+.lectura {
+  font: bold 34px/1.3 var(--legible); text-align: center; margin: 0;
+  background: var(--papel); border: var(--borde); border-radius: 12px; box-shadow: var(--sombra);
+  padding: 16px 28px; max-width: 90%;
+}
+.ficha .fig-txt { font-size: 18px; }
+.ficha.ok { width: auto !important; min-width: 84px; padding: 0 8px; }
 .opciones, .tocar { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
 .btn-opcion { min-width: 150px; min-height: 150px; }
-.btn-opcion .fig-txt { font-size: 32px; }
+.btn-opcion .fig-txt { font-size: 56px; }
 .btn-opcion .fig img + .fig-txt, .btn-opcion .fig-imgs + .fig-txt { font-size: 18px; }
 .btn.ok { background: var(--verde); }
 .error { animation: sacudir .4s; background: var(--rojo) !important; }
@@ -164,7 +171,7 @@ body {
 .bandeja { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; min-height: 130px; }
 .ficha {
   background: var(--papel); border: var(--borde); border-radius: 12px; box-shadow: var(--sombra);
-  width: 120px; height: 120px; display: flex; align-items: center; justify-content: center;
+  min-width: 120px; height: 120px; padding: 0 10px; display: flex; align-items: center; justify-content: center;
   touch-action: none; cursor: grab; position: relative;
 }
 .ficha .fig img { width: 84px; height: 84px; }
@@ -224,12 +231,12 @@ body {
   .fig img { width: 130px; height: 130px; }
   .fig-imgs.varias img { width: 70px; height: 70px; }
   .btn-opcion { min-width: 200px; min-height: 200px; }
-  .btn-opcion .fig-txt { font-size: 44px; }
+  .btn-opcion .fig-txt { font-size: 72px; }
   .btn-objeto { width: 180px; height: 180px; }
   .carta { width: 190px; height: 190px; }
   .carta .fig img { width: 120px; height: 120px; }
   .carta .fig-imgs.varias img { width: 48px; height: 48px; }
-  .ficha { width: 150px; height: 150px; }
+  .ficha { min-width: 150px; height: 150px; }
   .ficha .fig img { width: 110px; height: 110px; }
   .caja { min-height: 300px; }
   .btn-materia { width: 230px; height: 230px; }

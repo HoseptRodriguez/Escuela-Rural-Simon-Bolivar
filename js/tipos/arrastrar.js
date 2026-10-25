@@ -65,7 +65,8 @@
         if (!mov) { // fue un toque: seleccionar
           E.sfx.clic();
           elegir(sel === f ? null : f);
-          if (sel && f._it.audio) E.voz(f._it.audio, f._it.voz || f._it.texto, f._it.idioma || c.idioma);
+          // Las fichas de solo texto no se leen en voz alta al elegirlas: el niño debe leerlas
+          if (sel && f._it.audio && f._it.img) E.voz(f._it.audio, f._it.voz || f._it.texto, f._it.idioma || c.idioma);
           return;
         }
         f.style.visibility = 'hidden';

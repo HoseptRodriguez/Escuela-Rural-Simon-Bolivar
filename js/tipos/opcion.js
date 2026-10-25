@@ -1,10 +1,12 @@
 /*
  * Tipo "opcion": el niño toca la respuesta correcta.
- * Ronda: { instruccion, audio, enunciado?: [figura...], opciones: [figura con id | número], correcta: id }
+ * Ronda: { instruccion, audio, lectura?: "oración para leer", enunciado?: [figura...],
+ *          opciones: [figura con id | número], correcta: id }
  */
 (function (E) {
   'use strict';
   E.tipos.opcion = function (r, c) {
+    if (r.lectura) c.escena.appendChild(E.el('p', 'lectura', r.lectura));
     if (r.enunciado) {
       const en = E.el('div', 'enunciado');
       r.enunciado.forEach(function (f) { en.appendChild(E.figura(E.normalizar(f))); });

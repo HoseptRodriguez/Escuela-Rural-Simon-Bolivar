@@ -1,0 +1,54 @@
+{
+  "curso": "transicion",
+  "materia": "lectoescritura",
+  "actividades": [
+    {
+      "id": "t-lec-01",
+      "titulo": "Las vocales",
+      "tipo": "opcion",
+      "imagen": "img/obj/arbol.svg",
+      "dba": "DBA 9",
+      "dba_texto": "Identifica algunas letras y los sonidos que representan, en palabras de su entorno.",
+      "dba_verificado": false,
+      "instruccion": "Escucha el sonido y toca la letra.",
+      "audio": "audio/transicion/lectoescritura/t-lec-01.mp3",
+      "rondas": [
+        { "instruccion": "Árbol empieza con a. Toca la letra a.", "audio": "audio/transicion/lectoescritura/t-lec-01-a.mp3",
+          "enunciado": [{ "img": "img/obj/arbol.svg" }], "correcta": "a",
+          "opciones": [
+            { "id": "a", "texto": "A", "voz": "a", "audio": "audio/transicion/lectoescritura/letra-a.mp3" },
+            { "id": "o", "texto": "O", "voz": "o", "audio": "audio/transicion/lectoescritura/letra-o.mp3" },
+            { "id": "u", "texto": "U", "voz": "u", "audio": "audio/transicion/lectoescritura/letra-u.mp3" }
+          ] },
+        { "instruccion": "Ojos empieza con o. Toca la letra o.", "audio": "audio/transicion/lectoescritura/t-lec-01-o.mp3",
+          "enunciado": [{ "img": "img/obj/ojos.svg" }], "correcta": "o",
+          "opciones": [
+            { "id": "e", "texto": "E", "voz": "e", "audio": "audio/transicion/lectoescritura/letra-e.mp3" },
+            { "id": "o", "texto": "O", "voz": "o", "audio": "audio/transicion/lectoescritura/letra-o.mp3" },
+            { "id": "i", "texto": "I", "voz": "i", "audio": "audio/transicion/lectoescritura/letra-i.mp3" }
+          ] },
+        { "instruccion": "Estrella empieza con e. Toca la letra e.", "audio": "audio/transicion/lectoescritura/t-lec-01-e.mp3",
+          "enunciado": [{ "img": "img/obj/estrella.svg" }], "correcta": "e",
+          "opciones": [
+            { "id": "a", "texto": "A", "voz": "a", "audio": "audio/transicion/lectoescritura/letra-a.mp3" },
+            { "id": "u", "texto": "U", "voz": "u", "audio": "audio/transicion/lectoescritura/letra-u.mp3" },
+            { "id": "e", "texto": "E", "voz": "e", "audio": "audio/transicion/lectoescritura/letra-e.mp3" }
+          ] },
+        { "instruccion": "Imán empieza con i. Toca la letra i.", "audio": "audio/transicion/lectoescritura/t-lec-01-i.mp3",
+          "enunciado": [{ "img": "img/obj/iman.svg" }], "correcta": "i",
+          "opciones": [
+            { "id": "i", "texto": "I", "voz": "i", "audio": "audio/transicion/lectoescritura/letra-i.mp3" },
+            { "id": "o", "texto": "O", "voz": "o", "audio": "audio/transicion/lectoescritura/letra-o.mp3" },
+            { "id": "a", "texto": "A", "voz": "a", "audio": "audio/transicion/lectoescritura/letra-a.mp3" }
+          ] },
+        { "instruccion": "Uva empieza con u. Toca la letra u.", "audio": "audio/transicion/lectoescritura/t-lec-01-u.mp3",
+          "enunciado": [{ "img": "img/obj/uva.svg" }], "correcta": "u",
+          "opciones": [
+            { "id": "e", "texto": "E", "voz": "e", "audio": "audio/transicion/lectoescritura/letra-e.mp3" },
+            { "id": "u", "texto": "U", "voz": "u", "audio": "audio/transicion/lectoescritura/letra-u.mp3" },
+            { "id": "i", "texto": "I", "voz": "i", "audio": "audio/transicion/lectoescritura/letra-i.mp3" }
+          ] }
+      ]
+    }
+  ]
+}

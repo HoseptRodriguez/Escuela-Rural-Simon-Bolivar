@@ -1,0 +1,29 @@
+{
+  "curso": "segundo",
+  "materia": "lectoescritura",
+  "actividades": [
+    {
+      "id": "s-lec-01",
+      "titulo": "Leo y escojo",
+      "tipo": "opcion",
+      "imagen": "img/obj/sol.svg",
+      "dba": "DBA 7",
+      "dba_texto": "Comprende el sentido de oraciones sencillas y las relaciona con imágenes.",
+      "dba_verificado": false,
+      "instruccion": "Lee la oración y toca el dibujo correcto.",
+      "audio": "audio/segundo/lectoescritura/s-lec-01.mp3",
+      "rondas": [
+        { "lectura": "La vaca come pasto.", "correcta": "vaca",
+          "opciones": [{ "id": "vaca", "img": "img/obj/vaca.svg" }, { "id": "pez", "img": "img/obj/pez.svg" }, { "id": "pajaro", "img": "img/obj/pajaro.svg" }] },
+        { "lectura": "El pájaro vuela alto.", "correcta": "pajaro",
+          "opciones": [{ "id": "perro", "img": "img/obj/perro.svg" }, { "id": "pajaro", "img": "img/obj/pajaro.svg" }, { "id": "tortuga", "img": "img/obj/tortuga.svg" }] },
+        { "lectura": "La rana salta en el charco.", "correcta": "rana",
+          "opciones": [{ "id": "vaca", "img": "img/obj/vaca.svg" }, { "id": "mariposa", "img": "img/obj/mariposa.svg" }, { "id": "rana", "img": "img/obj/rana.svg" }] },
+        { "lectura": "Mi pelota es redonda.", "correcta": "pelota",
+          "opciones": [{ "id": "silla", "img": "img/obj/silla.svg" }, { "id": "pelota", "img": "img/obj/pelota.svg" }, { "id": "piedra", "img": "img/obj/piedra.svg" }] },
+        { "lectura": "El sol sale de día.", "correcta": "sol",
+          "opciones": [{ "id": "sol", "img": "img/obj/sol.svg" }, { "id": "estrella", "img": "img/obj/estrella.svg" }, { "id": "casa", "img": "img/obj/casa.svg" }] }
+      ]
+    }
+  ]
+}
