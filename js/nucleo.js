@@ -31,29 +31,78 @@
     return cache[url];
   };
 
+  /* ---------- Web Audio compartido por voces y efectos ---------- */
+  // Safari (iPad) solo deja sonar un <audio> que sale directo de un toque, así que las voces
+  // encadenadas (instrucción + palabra en inglés, "¡Muy bien!") se bloqueaban. Con Web Audio
+  // basta activar el contexto dentro de un toque; después todo puede sonar.
+  let ctx = null;
+  function contexto() {
+    if (!ctx) {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return null;
+      ctx = new AC();
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    return ctx;
+  }
+  function desbloquear() {
+    const c = contexto();
+    if (!c) return;
+    // Un sonido vacío dentro del toque termina de habilitar el audio en iOS
+    const b = c.createBufferSource();
+    b.buffer = c.createBuffer(1, 1, 22050);
+    b.connect(c.destination);
+    b.start(0);
+  }
+  ['touchend', 'click'].forEach(function (ev) { document.addEventListener(ev, desbloquear, true); });
+
   /* ---------- Voz: mp3 pregrabado; la síntesis del navegador solo como respaldo ---------- */
-  const VERSION_AUDIO = 2; // súbela si se regeneran las voces y algún navegador guardó las viejas
-  let sonando = null;
+  const VERSION_AUDIO = 3; // súbela si se regeneran las voces y algún navegador guardó las viejas
+  // Se guarda el mp3 comprimido (pocos KB) y se decodifica al sonar: decodificado ocuparía
+  // cientos de KB por frase, demasiado para tablets de 1 GB.
+  const mp3 = {};
+  let sonando = null, turno = 0;
+
   E.detenerVoz = function () {
-    if (sonando) { sonando.pause(); sonando = null; }
+    turno++;
+    if (sonando) { try { sonando.stop(); } catch (e) { /* ya había terminado */ } sonando = null; }
     if (window.speechSynthesis) speechSynthesis.cancel();
   };
 
+  function cargar(src) {
+    if (!mp3[src]) {
+      // ?v= obliga a descargar de nuevo los audios guardados en caché con la versión anterior
+      mp3[src] = fetch(src + '?v=' + VERSION_AUDIO).then(function (r) {
+        if (!r.ok) throw new Error(src + ' ' + r.status);
+        return r.arrayBuffer();
+      });
+      mp3[src].catch(function () { delete mp3[src]; });
+    }
+    return mp3[src].then(function (datos) {
+      // decodeAudioData consume el buffer: se le pasa una copia
+      return new Promise(function (ok, mal) { contexto().decodeAudioData(datos.slice(0), ok, mal); });
+    });
+  }
+
   E.voz = function (src, texto, idioma) {
     E.detenerVoz();
+    const mio = turno;
     return new Promise(function (fin) {
-      let hecho = false, a = null;
-      const respaldo = function () {
-        if (hecho || (a && sonando !== a)) return;
-        hecho = true;
-        hablar(texto, idioma, fin);
-      };
-      if (!src) return respaldo();
-      // ?v= obliga a descargar de nuevo los audios guardados en caché con la versión anterior
-      a = sonando = new Audio(src + '?v=' + VERSION_AUDIO);
-      a.onended = function () { hecho = true; fin(); };
-      a.onerror = respaldo;
-      a.play().catch(respaldo);
+      if (!src || !contexto()) return hablar(texto, idioma, fin);
+      cargar(src).then(function (buf) {
+        if (mio !== turno) return; // mientras se descargaba se pidió otra voz
+        const s = ctx.createBufferSource();
+        s.buffer = buf;
+        s.connect(ctx.destination);
+        s.onended = function () {
+          if (sonando === s) sonando = null;
+          if (mio === turno) fin();
+        };
+        sonando = s;
+        s.start(0);
+      }, function () {
+        if (mio === turno) hablar(texto, idioma, fin);
+      });
     });
   };
 
@@ -79,11 +128,9 @@
   };
 
   /* ---------- Efectos 8-bit sintetizados con Web Audio (0 KB de descarga) ---------- */
-  let ctx = null;
   function tono(notas, onda) {
     try {
-      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
-      if (ctx.state === 'suspended') ctx.resume();
+      if (!contexto()) return;
       let t = ctx.currentTime;
       notas.forEach(function (n) {
         const o = ctx.createOscillator(), g = ctx.createGain();
